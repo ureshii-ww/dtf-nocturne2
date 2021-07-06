@@ -1,0 +1,29 @@
+.live-item__header {
+  .live-item__name {
+    color: var(--text-color-title);
+  }
+
+  .live-item__user:hover {
+    .live-item__name {
+      color: var(--text-color-blue);
+    }
+  }
+
+  .live-item__date {
+    color: var(--text-color-minor);
+    &:hover {
+      color: var(--text-color-blue);
+    }
+  }
+}
+
+.live-item__text {
+  color: var(--text-color-gray);
+}
+
+.live-item__footer {
+  color: var(--text-color-title);
+  a:hover {
+    color: var(--text-color-blue);
+  }
+}
