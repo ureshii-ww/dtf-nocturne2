@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
@@ -21,12 +21,17 @@ const createOptimization = () => {
 
 const cssLoaders = extra => {
   const loaders = [
-    'to-string-loader',
-    'css-loader'
+    { loader: 'to-string-loader' },
+    {
+      loader: 'css-loader',
+      options: {
+        esModule: false
+      }
+    }
   ]
   
   if (extra) {
-    loaders.push(extra)
+    loaders.push({ loader: extra })
   }
   
   return loaders
