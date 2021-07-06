@@ -1,31 +1,33 @@
-//Поиск объектов с нужным нам текстом в window.webpackJsonp, лучше полностью поменять механизм поиска
-const findChunk = (chunkNumber) => {
-  let string = null;
+//Делаем карту объектом и меняем формат селекторов на соответствующий CSS
+const parseChunkMap = (chunkMap) => {
+  const parsedChunkMap = eval('(' + chunkMap + ')');
   
-  window.webpackJsonp.forEach(e => {
-    if (e[1].hasOwnProperty(chunkNumber)) {
-      string = e[1][chunkNumber].toString();
+  for (const key in parsedChunkMap) {
+    if (parsedChunkMap[key].includes(' ')) {
+      const newValue = parsedChunkMap[key].split(' ').join('.');
+      parsedChunkMap[key] = newValue;
     }
-  })
-  
-  return string;
+  }
+  return parsedChunkMap;
 }
 
-//Ищем карты, вычленяем их из текста функций, меняем их значения на подходящие для CSS-селекторов, объединяем в одну
-export const makeClassMap = (chunkNumbers) => {
-  let map = {};
-  chunkNumbers.forEach(chunk => {
-    const neededChunk = findChunk(chunk);
-    const invertedChunkMap = neededChunk.match(/t\.locals={[^}]+}/gm)[0].substr(9);
-    const chunkMap = eval('(' + invertedChunkMap + ')');
-    for (const key in chunkMap) {
-      if (chunkMap[key].includes(' ')) {
-        const newValue = chunkMap[key].split(' ').join('.');
-        chunkMap[key] = newValue;
+//Проходим по webpackJsonp, в каждом элементе
+//проверяем каждую функцию на наличие карты.
+//Если карта есть, то модифицируем её и добавляем в общую карту.
+export const makeClassMap = () => {
+  let classMap = {};
+  
+  window.webpackJsonp.forEach(e => {
+    for (const key in e[1]) {
+      const stringOfFunctionInKey = e[1][key].toString();
+      const stringifiedChunkMap = stringOfFunctionInKey.match(/t\.locals={[^}]+}/gm)
+      
+      if (stringifiedChunkMap) {
+        const finalChunkMap = parseChunkMap(stringifiedChunkMap[0].substr(9));
+        Object.assign(classMap, finalChunkMap);
       }
     }
-    Object.assign(map, chunkMap);
   })
   
-  return map;
+  return classMap;
 }

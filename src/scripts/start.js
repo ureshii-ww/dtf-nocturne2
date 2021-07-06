@@ -10,7 +10,7 @@ export const start = () => {
   
   //Поиск карты и модификации CSS запускается только после загрузки страницы
   window.onload = () => {
-    const classMap = makeClassMap(['1376', '1380', '1382', '1384']);
+    const classMap = makeClassMap();
     const modifiedCss = replaceClassesInCss(initialCss, classMap);
     injectCss(modifiedCss);
     //destroyPlaceholder();
