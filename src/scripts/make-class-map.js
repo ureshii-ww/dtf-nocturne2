@@ -1,3 +1,4 @@
+//Поиск объектов с нужным нам текстом в window.webpackJsonp, лучше полностью поменять механизм поиска
 const findChunk = (chunkNumber) => {
   let string = null;
   
@@ -10,6 +11,7 @@ const findChunk = (chunkNumber) => {
   return string;
 }
 
+//Ищем карты, вычленяем их из текста функций, меняем их значения на подходящие для CSS-селекторов, объединяем в одну
 export const makeClassMap = (chunkNumbers) => {
   let map = {};
   chunkNumbers.forEach(chunk => {
