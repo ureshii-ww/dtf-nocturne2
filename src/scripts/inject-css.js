@@ -1,8 +1,8 @@
 export const injectCss = (css) => {
-  const head = document.getElementsByTagName('head')[0];
+  const body = document.getElementsByTagName('body')[0];
   const newCss = document.createElement('style');
   newCss.type = "text/css";
-  newCss.id = 'IM HERE';
+  newCss.id = 'DTF Nocturne';
   newCss.innerHTML = css;
-  head.appendChild(newCss);
+  body.appendChild(newCss);
 }

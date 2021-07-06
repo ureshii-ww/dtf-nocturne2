@@ -1,8 +1,8 @@
-import { makeClassMap } from './makeClassMap';
-import { replaceClassesInCss } from './replaceClassesInCss';
-import {injectCss} from './injectCss';
+import { makeClassMap } from './make-class-map';
+import { replaceClassesInCss } from './replace-classes-in-css';
+import {injectCss} from './inject-css';
 
-const initialCss = require('../styles/old.css').toString();
+const initialCss = require('../styles/index.scss').toString();
 
 export const start = () => {
   window.onload = () => {
