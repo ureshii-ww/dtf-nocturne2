@@ -1,0 +1,14 @@
+@import 'variables';
+
+@mixin newFormBorderFocused {
+  border-color: var(--back-color-blue-button) !important;
+}
+
+@mixin newFormBorderHover {
+  border-color: var(--text-color-blue);
+}
+
+@mixin newFormBorderShadow {
+  -webkit-box-shadow: 0 0 0 3px $newFormBorderShadowColor;
+  box-shadow: 0 0 0 3px $newFormBorderShadowColor;
+}

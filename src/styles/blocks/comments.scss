@@ -1,0 +1,44 @@
+@import '../mixins';
+
+.comments_form--focused {
+  @include newFormBorderFocused;
+  @include newFormBorderShadow;
+}
+
+.comments_form:hover {
+  @include newFormBorderHover;
+  @include newFormBorderShadow;
+}
+
+.thesis__attach_something {
+  .icon--v_image {
+    fill: var(--text-color-green);
+  }
+
+  .icon--v_link {
+    fill: var(--text-color-blue);
+  }
+
+  .icon--v_rouble {
+    fill: var(--back-color-blue-button);
+  }
+}
+
+.comments_pseudo_form__text {
+  color: var(--text-color-minor)
+}
+
+.comments_pseudo_form__button {
+  .icon--v_image {
+    fill: var(--text-color-green);
+  }
+
+  .icon--v_link {
+    fill: var(--text-color-blue);
+  }
+
+  .icon--v_rouble {
+    fill: var(--back-color-blue-button);
+  }
+}
+

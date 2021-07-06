@@ -8,7 +8,7 @@ const initialCss = require('../styles/index.scss').toString();
 export const start = () => {
   //createPlaceholder();
   window.onload = () => {
-    const classMap = makeClassMap(['1375', '1379', '1381', '1383']);
+    const classMap = makeClassMap(['1376', '1380', '1382', '1384']);
     const modifiedCss = replaceClassesInCss(initialCss, classMap);
     injectCss(modifiedCss);
     //destroyPlaceholder();
