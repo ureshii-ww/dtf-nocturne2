@@ -6,13 +6,20 @@ import { createPlaceholder, destroyPlaceholder } from './placeholder';
 const initialCss = require('../styles/index.scss').toString();
 
 export const start = () => {
-  //createPlaceholder();
+  //Временный плейсхолдер
+  const head = document.getElementsByTagName('head')[0];
+  const placeholder = document.createElement('style');
+  placeholder.type = "text/css";
+  placeholder.innerHTML = '* {background-color: #121212 !important; color: #121212; !important} div {display: none !important;}';
+  placeholder.id = 'placeholder';
+  head.appendChild(placeholder);
   
-  //Поиск карты и модификации CSS запускается только после загрузки страницы
+  //Выполняем замену стилей после загрузки страницы
   window.onload = () => {
     const classMap = makeClassMap();
     const modifiedCss = replaceClassesInCss(initialCss, classMap);
     injectCss(modifiedCss);
-    //destroyPlaceholder();
+    //Удаляем плейсхолдер
+    head.removeChild(placeholder);
   }
 }
