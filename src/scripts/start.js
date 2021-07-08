@@ -1,7 +1,7 @@
 import { makeClassMap } from './make-class-map';
 import { replaceClassesInCss } from './replace-classes-in-css';
 import { injectCss } from './inject-css';
-import { createPlaceholder, destroyPlaceholder } from './placeholder';
+import { manageOptions } from './manage-options';
 
 const initialCss = require('../styles/index.scss').toString();
 
@@ -18,6 +18,7 @@ export const start = () => {
   window.onload = () => {
     const classMap = makeClassMap();
     const modifiedCss = replaceClassesInCss(initialCss, classMap);
+    manageOptions();
     injectCss(modifiedCss);
     //Удаляем плейсхолдер
     head.removeChild(placeholder);

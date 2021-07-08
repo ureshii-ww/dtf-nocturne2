@@ -1,0 +1,37 @@
+@import '../variables';
+
+.uww-options {
+  position: relative;
+
+  &__header-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__moon {
+    color: goldenrod;
+  }
+
+  &__dropdown {
+    width: 430px;
+    min-height: 250px;
+    max-height: 530px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    overflow-y: auto;
+    background-color: var(--color-16ev);
+    box-shadow: $boxShadowDropdowns;
+  }
+}
+
+.uww--hidden {
+  display: none;
+}
+
