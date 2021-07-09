@@ -5,6 +5,11 @@ export const restoreOptions = () => {
   let savedOptions = JSON.parse(localStorage.getItem('uww-noct-opt'));
   
   if (savedOptions) {
+    for (const option in savedOptions) {
+      if (!options[option]) {
+        delete savedOptions[option];
+      }
+    }
     options = { ...options, ...savedOptions };
   }
   
