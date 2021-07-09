@@ -19,6 +19,7 @@
   }
 
   &__dropdown {
+    display: none;
     width: 430px;
     min-height: 250px;
     max-height: 530px;
@@ -31,7 +32,7 @@
   }
 }
 
-.uww--hidden {
-  display: none;
+.uww--show {
+  display: block;
 }
 
