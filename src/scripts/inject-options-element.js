@@ -1,3 +1,5 @@
+import {enableOption, disableOption} from './manage-options';
+
 const createOptionsButton = () => {
   const optionsButtonWrapper = document.createElement('div');
   optionsButtonWrapper.className = 'site-header__item uww-options';
@@ -19,23 +21,24 @@ const createOptionsItem = (option, options) => {
   const optionItem = document.createElement('div');
   optionItem.className = 'uww-options__item';
   
-  const checkbox = document.createElement('input');
-  checkbox.className = 'uww-options__checkbox';
-  checkbox.type = 'checkbox';
-  checkbox.id = `toggle-${option}`;
-  checkbox.checked = options[option].value;
-  checkbox.value = option;
-  optionItem.appendChild(checkbox);
-  
   const label = document.createElement('label');
   label.className = 'uww-options__label';
   label.innerText = options[option].description;
-  label.htmlFor = `toggle-${option}`;
-  label.value = option;
   optionItem.appendChild(label);
   
-  label.addEventListener('click', ev => {
-    console.log(ev.target.value);
+  const checkbox = document.createElement('input');
+  checkbox.className = 'uww-options__checkbox';
+  checkbox.type = 'checkbox';
+  checkbox.value = option;
+  checkbox.checked = options[option].value;
+  label.appendChild(checkbox);
+  
+  checkbox.addEventListener('change', ev => {
+    if (ev.target.checked) {
+      enableOption(ev.target.value);
+    } else {
+      disableOption(ev.target.value);
+    }
   })
   
   return optionItem;
@@ -55,7 +58,7 @@ const createOptionsDropdown = (options, optionsWrapper) => {
   optionsWrapper.appendChild(optionsDropdown);
 }
 
-const addEventListeners = () => {
+const addDropdownEventListeners = () => {
   const optionsButton = document.getElementsByClassName('uww-options__header-button')[0];
   const optionsDropdown = document.getElementsByClassName('uww-options__dropdown')[0];
   
@@ -78,5 +81,5 @@ const addEventListeners = () => {
 export const injectOptionsElement = (options) => {
   const optionsWrapper = createOptionsButton();
   createOptionsDropdown(options, optionsWrapper);
-  addEventListeners();
+  addDropdownEventListeners();
 }

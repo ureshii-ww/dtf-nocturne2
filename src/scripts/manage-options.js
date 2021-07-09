@@ -1,4 +1,4 @@
-import {options_list} from '../config/options_list';
+import options_list from '../config/options_list';
 
 export const restoreOptions = () => {
   let options = {...options_list};
@@ -17,4 +17,18 @@ export const restoreOptions = () => {
   }
   
   return options;
+}
+
+export const enableOption = (option) => {
+  const options = JSON.parse(localStorage.getItem('uww-noct-opt'));
+  options[option].value = true;
+  document.body.classList.add(option);
+  localStorage.setItem('uww-noct-opt', JSON.stringify(options));
+}
+
+export const disableOption = (option) => {
+  const options = JSON.parse(localStorage.getItem('uww-noct-opt'));
+  options[option].value = false;
+  document.body.classList.remove(option);
+  localStorage.setItem('uww-noct-opt', JSON.stringify(options));
 }

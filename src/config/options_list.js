@@ -1,4 +1,4 @@
-export const options_list = {
+const options_list = {
   uww_likes: {
     description: 'Убрать фон у лайков',
     value: true
@@ -28,3 +28,5 @@ export const options_list = {
     value: false
   }
 }
+
+export default options_list
