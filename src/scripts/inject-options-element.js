@@ -17,29 +17,36 @@ const createOptionsButton = () => {
   return optionsButtonWrapper;
 }
 
+//Создаем блок конкретной опции.
+//Очоба оборачивает инпуты чекбоксов,
+//поэтому вместо них городим вот это.
 const createOptionsItem = (option, options) => {
-  const optionItem = document.createElement('div');
+  const optionItem = document.createElement('label');
   optionItem.className = 'uww-options__item';
+  optionItem.innerHTML = `<span>${options[option].description}</span>`;
+  optionItem.value = option;
+  optionItem.isEnabled = options[option].value;
   
-  const label = document.createElement('label');
-  label.className = 'uww-options__label';
-  label.innerText = options[option].description;
-  optionItem.appendChild(label);
+  const toggle = document.createElement('div');
+  toggle.className = 'uww-options__toggle';
+  if (options[option].value) {
+    toggle.classList.add('uww-options__toggle--checked');
+  }
+  optionItem.appendChild(toggle);
   
-  const checkbox = document.createElement('input');
-  checkbox.className = 'uww-options__checkbox';
-  checkbox.type = 'checkbox';
-  checkbox.value = option;
-  checkbox.checked = options[option].value;
-  label.appendChild(checkbox);
-  
-  checkbox.addEventListener('change', ev => {
-    if (ev.target.checked) {
-      enableOption(ev.target.value);
+  optionItem.addEventListener('click', ev => {
+    ev.stopPropagation();
+    
+    if (ev.currentTarget.isEnabled) {
+      disableOption(ev.currentTarget.value);
+      ev.currentTarget.isEnabled = false;
     } else {
-      disableOption(ev.target.value);
+      enableOption(ev.currentTarget.value);
+      ev.currentTarget.isEnabled = true;
     }
-  })
+    
+    ev.currentTarget.getElementsByClassName('uww-options__toggle')[0].classList.toggle('uww-options__toggle--checked');
+  });
   
   return optionItem;
 }
@@ -64,12 +71,19 @@ const addDropdownEventListeners = () => {
   
   optionsButton.addEventListener('click', ev => {
     ev.stopPropagation();
+    ev.currentTarget.classList.toggle('uww-options__header-button--opened')
     document.getElementsByClassName('uww-options__dropdown')[0].classList.toggle('uww--show');
   });
   
   window.addEventListener('click', ev => {
     if (!ev.target.classList.contains('uww-options__dropdown')) {
-      document.getElementsByClassName('uww-options__dropdown')[0].classList.remove('uww--show');
+      document.getElementsByClassName('uww-options__dropdown')[0]
+        .classList.remove('uww--show');
+      
+      const headerButton = document.getElementsByClassName('uww-options__header-button')[0];
+      if (headerButton.classList.contains('uww-options__header-button--opened')) {
+        headerButton.classList.toggle('uww-options__header-button--opened')
+      }
     }
   });
   
