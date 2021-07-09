@@ -1,0 +1,11 @@
+.uww_darken-images {
+  .andropov_image__inner img, .andropov_video, .gall__item, .block-person .andropov_image {
+    filter: brightness(0.6);
+    transition: filter, 0.5s;
+  }
+
+  .andropov_image__inner img:hover, .entry_wrapper:hover .andropov_image__inner img, .entry_wrapper:hover .andropov_video, .andropov_video:hover, .gall__item:hover, .content-feed:hover .andropov_image img, .content-feed:hover .andropov_video, .block-person .andropov_image:hover {
+    filter: brightness(1);
+    transition: filter, 0.5s;
+  }
+}

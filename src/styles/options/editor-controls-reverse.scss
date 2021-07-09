@@ -1,0 +1,35 @@
+.uww_editor-controls-reverse {
+  @media (min-width: 1025px) {
+    .editor-cp__content {
+      flex-direction: row-reverse;
+    }
+
+    .editor-cp__left {
+      margin-right: 0;
+      margin-left: auto;
+      flex-direction: row-reverse;
+    }
+
+    .editor-cp__right {
+      margin-right: 20px;
+      margin-left: 0;
+    }
+
+    .editor-cp-tab--active .editor-cp-tab__label:after {
+      left: 0;
+      right: 0;
+    }
+
+    .editor-cp-tab__label {
+      padding: 0;
+    }
+
+    .editor-cp__left .v-button:first-of-type {
+      margin-right: 0;
+    }
+
+    .editor-cp__left .v-button:last-of-type {
+      margin-right: 12px;
+    }
+  }
+}

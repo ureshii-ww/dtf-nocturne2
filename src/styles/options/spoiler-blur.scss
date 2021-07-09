@@ -1,0 +1,35 @@
+.uww_spoiler-blur {
+  .block-hidden-wrapper::before, .block-hidden {
+    background-color: transparent !important;
+  }
+
+  .block-hidden {
+    backdrop-filter: blur(36px);
+  }
+
+  .block-hidden__text {
+    display: none;
+  }
+
+  .block-hidden-wrapper {
+    min-height: 36px;
+    margin-bottom: 5px;
+  }
+
+  .block-hidden__button {
+    background-color: var(--color-03ev);
+    padding: 5px 10px;
+    border-radius: 8px;
+    color: var(--text-color-title) !important;
+    box-shadow: rgba(8, 8, 8, 0.25) 0px 6px 12px -2px, rgba(8, 8, 8, 0.3) 0px 3px 7px -3px !important;
+    height: 34px;
+  }
+
+  .block-hidden__button:hover {
+    color: var(--text-color-title) !important;
+  }
+
+  .block-hidden__button:active {
+    transform: translateY(1px);
+  }
+}
