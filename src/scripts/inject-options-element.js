@@ -15,16 +15,38 @@ const createOptionsButton = () => {
   return optionsButtonWrapper;
 }
 
+const createOptionsItem = (option, options) => {
+  const optionItem = document.createElement('div');
+  optionItem.className = 'uww-options__item';
+  
+  const checkbox = document.createElement('input');
+  checkbox.className = 'uww-options__checkbox';
+  checkbox.type = 'checkbox';
+  checkbox.id = `toggle-${option}`;
+  checkbox.checked = options[option].value;
+  checkbox.value = option;
+  optionItem.appendChild(checkbox);
+  
+  const label = document.createElement('label');
+  label.className = 'uww-options__label';
+  label.innerText = options[option].description;
+  label.htmlFor = `toggle-${option}`;
+  label.value = option;
+  optionItem.appendChild(label);
+  
+  label.addEventListener('click', ev => {
+    console.log(ev.target.value);
+  })
+  
+  return optionItem;
+}
+
 const createOptionsDropdown = (options, optionsWrapper) => {
   const optionsDropdown = document.createElement('div');
   optionsDropdown.className = 'uww-options__dropdown';
   for (const option in options) {
-    const optionElement = document.createElement('div');
-    optionElement.className = 'uww-options__item';
-    optionElement.innerHTML = `
-      <div class="uww-options__title">${option}</div>
-    `
-    optionsDropdown.appendChild(optionElement);
+    const optionsItem = createOptionsItem(option, options);
+    optionsDropdown.appendChild(optionsItem);
   }
   optionsDropdown.addEventListener('click', ev => {
     ev.stopPropagation();
