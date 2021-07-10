@@ -1,3 +1,13 @@
+.live-header {
+  &__title {
+    color: var(--text-color-title);
+  }
+}
+
+#v_chevron_right path {
+  fill: var(--text-color-title) !important;
+}
+
 .live-item__header {
   .live-item__name {
     color: var(--text-color-title);

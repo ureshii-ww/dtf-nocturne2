@@ -1,0 +1,76 @@
+$headerDropdownShadow: rgba(0,0,0,0.25) 0px 6px 12px -2px, rgba(0,0,0,0.3) 0px 3px 7px -3px;
+@mixin headerDropdownShadow {
+  box-shadow: $headerDropdownShadow;
+  -webkit-box-shadow: $headerDropdownShadow;
+}
+
+.search-dropdown {
+  background-color: var(--color-16ev);
+  color: var(--text-color-gray);
+  @include headerDropdownShadow;
+
+  &__title {
+    color: var(--text-color-minor);
+  }
+}
+
+.search-dropdown-item {
+  &--focused {
+    background-color: var(--hover-16ev);
+  }
+
+  &--string {
+    color: var(--text-color-gray)
+  }
+}
+
+.v-split-button__dropdown {
+  background-color: var(--color-16ev);
+  color: var(--text-color-gray);
+  @include headerDropdownShadow;
+}
+
+.v-split-button-option:hover {
+  background-color: var(--hover-16ev);
+}
+
+#ui_briefcase path{
+  stroke: var(--text-color-gray);
+}
+
+#ui_diamond path {
+  fill: var(--text-color-gray);
+}
+
+.site-header-user .bubble {
+  background-color: var(--color-16ev);
+  @include headerDropdownShadow;
+
+  &:before {
+    background-color: var(--color-16ev) !important;
+  }
+
+  &__title {
+    color: var(--text-color-minor);
+  }
+
+  .list__item {
+    color: var(--text-color-gray) !important;
+  }
+
+  .item--selected {
+    color: var(--text-color-title) !important;
+  }
+
+  .item__badge {
+    background-color: var(--back-color-blue-button) !important;
+  }
+
+  .item:hover,
+  .item--focused,
+  .item + .item--selected,
+  .item + .item--focused,
+  .item + .item:hover {
+    background-color: var(--hover-16ev);
+  }
+}

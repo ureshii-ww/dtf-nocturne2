@@ -1,4 +1,10 @@
-@import 'old.css';
+//@import 'old.css';
+@import 'style-variables';
+
+@import 'blocks/body';
+@import 'blocks/header';
+@import 'blocks/header-dropdowns';
+@import 'blocks/left-sidebar';
 @import 'blocks/right-sidebar';
 @import 'blocks/comments';
 @import 'blocks/uww-options';
