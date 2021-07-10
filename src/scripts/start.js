@@ -11,7 +11,7 @@ export const start = () => {
   const head = document.getElementsByTagName('head')[0];
   const placeholder = document.createElement('style');
   placeholder.type = "text/css";
-  placeholder.innerHTML = '* {background-color: #121212 !important; color: #121212; !important} div {display: none !important;}';
+  placeholder.innerHTML = '* {background-color: #121212 !important; color: #121212 !important;} div {display: none !important;}';
   placeholder.id = 'placeholder';
   head.appendChild(placeholder);
   

@@ -1,4 +1,4 @@
-:root {
+body {
   --text-color-gray: rgba(255, 255, 255, 0.69);
   --text-color-title: rgba(255, 255, 255, 0.87);
   --text-color-blue: #AAB6FE;
@@ -75,13 +75,14 @@ body {
   background-color: var(--color-16ev) !important;
 }
 
-.site-header,
+
 .u-notification--unread,
 .floating-popup__button .ui-button,
 .andropov_uploader__preview_item__remove {
   background-color: var(--color-12ev) !important;
 }
 
+.site-header,
 .thesis__attach_something,
 .gallery-item__remover-button,
 .form-picture__remove,
@@ -304,8 +305,6 @@ body {
   background-color: var(--color-02ev) !important;
 }
 
-.sidebar,
-.live,
 .l-island-bg,
 .new_entries,
 .ui-rounded-button__link,
@@ -341,7 +340,6 @@ body {
 .widget_wrapper--type-pink,
 .events_widget,
 .island--company_entries,
-.layout__left-column,
 .content-header__subscribe .ui-button,
 .content-header__subscribe .ui-button:hover,
 .entry_stub,
@@ -360,7 +358,6 @@ body {
 .v-popup-fp-window,
 .v-mobile-menu__header,
 .block-hidden-wrapper::before,
-.sidebar__footer,
 .boost_panel {
   background-color: var(--color-01ev) !important;
 }
@@ -1683,6 +1680,11 @@ a.v-list__item:hover,
 
 /*--------------------------------------------------------*/
 /* Left bar */
+.sidebar,
+.sidebar-tree-list__show-more-button{
+  background: transparent !important;
+}
+
 .sidebar-tree-list-item__child-item::before {
   background-color: var(--border-color) !important;
 }
@@ -1715,6 +1717,15 @@ a.v-list__item:hover,
   font-weight: 500;
 }
 
+.sidebar__footer {
+  background-color: var(--color-00ev) !important;
+  color: var(--text-color-gray) !important;
+
+  &:before {
+    display: none !important;
+  }
+}
+
 #ui_sidebar_live g rect {
   fill: var(--back-red) !important;
   fill-opacity: 1 !important;
@@ -1734,6 +1745,12 @@ a.v-list__item:hover,
 
 .u-notification--red .u-notification__avatar-icon {
   background: var(--text-color-red);
+}
+
+@media (max-width: 859px) {
+  .sidebar, .sidebar-tree-list__show-more-button, {
+    background-color: var(--color-00ev) !important;
+  }
 }
 
 /*--------------------------------------------------------*/
@@ -1814,13 +1831,6 @@ a.v-list__item:hover,
 }
 
 /*class=notify__item notify__item--error notify__item--shown*/
-@media (max-width: 1560px) and (min-width: 860px) {
-  .page--entry {
-    border-right: 1px solid;
-    border-left: 1px solid;
-    border-color: var(--border-color);
-  }
-}
 
 @media (max-width: 859px) {
   .ui-filters--responsive,

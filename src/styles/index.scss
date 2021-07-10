@@ -1,11 +1,14 @@
-//@import 'old.css';
-@import 'style-variables';
+@import 'old';
+//@import 'style-variables';
 
-@import 'blocks/body';
-@import 'blocks/header';
-@import 'blocks/header-dropdowns';
-@import 'blocks/left-sidebar';
+//@import 'blocks/general';
+//@import 'blocks/body';
+//@import 'blocks/header';
+//@import 'blocks/header-dropdowns';
+//@import 'blocks/left-sidebar';
 @import 'blocks/right-sidebar';
+//@import 'blocks/feed';
+//@import 'blocks/widgets';
 @import 'blocks/comments';
 @import 'blocks/uww-options';
 
@@ -16,3 +19,6 @@
 @import 'options/editor-controls-top';
 @import 'options/editor-controls-reverse';
 @import 'options/spoiler-blur';
+
+@import 'site-specific/vc';
+@import 'site-specific/tj';

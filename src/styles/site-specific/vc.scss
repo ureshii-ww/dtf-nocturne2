@@ -1,0 +1,71 @@
+.uww-site-vc {
+  --back-color-blue-button: #af4448;
+  --blue-button-hover: #ba6b6c;
+  --site-color: #ffa4a2;
+
+  .sidebar-tree-list-item--active,
+  .sidebar-tree-list-item--active:not(.sidebar-tree-list-item--with-active-child) .sidebar-tree-list-item__icon,
+  .sidebar-tree-list-item__child-item--active,
+  .site-header-burger:hover,
+  .head-notifies__toggler:hover .icon,
+  .site-header-user-profile__toggle:hover,
+  .ui-rounded-button--active .ui-rounded-button__link,
+  .content-editorial-tick,
+  .site-header-logo:hover,
+  .site-header-user-login:hover,
+  .quiz__panel__button,
+  .quiz__panel__button__label,
+  .quiz__item__voted__count,
+  .page--plus .plus-features__item .icon {
+    color: var(--site-color) !important;
+  }
+
+  .sidebar__footer__item--sponsor span,
+  .v-tab--active .v-tab__label::after,
+  .quiz__item__progressbar__runner,
+  .quiz__item__progressbar,
+  .ui-tab--active .ui-tab__label:after {
+    background-color: var(--site-color) !important;
+  }
+
+  .st0 {
+    fill: var(--text-color-gray) !important;
+  }
+
+  .head-notifies--showed .head-notifies__toggler .icon,
+  .head-notifies__toggler:hover .icon,
+  .site-header-user-profile__toggle:hover,
+  .site-header-burger:hover {
+    fill: var(--site-color) !important;
+  }
+
+  .new-entries-horizon svg [data-accent-color-stroke] {
+    stroke: var(--site-color);
+  }
+
+  #ui_flag2 path {
+    stroke: var(--text-color-gray) !important;
+  }
+
+  .widget_wrapper--type-pink .widget_wrapper__item {
+    border-color: var(--border-color) !important;
+  }
+
+  .quiz__item__check {
+    border-color: var(--site-color);
+  }
+
+  .quiz__panel__button__label {
+    border-color: var(--site-color);
+  }
+
+  .v-plus-badge {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(-41%, #e57373), color-stop(7%, #e57373), to(#af4448));
+    background-image: linear-gradient(90deg, #e57373 -41%, #e57373 7%, #af4448 100%);
+  }
+
+  .plus-badge {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(-41%, #e57373), color-stop(7%, #e57373), to(#af4448));
+    background-image: linear-gradient(90deg, #e57373 -41%, #e57373 7%, #af4448 100%);
+  }
+}
