@@ -1,0 +1,22 @@
+.audit_log__item__log a:hover,
+.profile_comment_favorite__title:hover,
+.profile_comment_favorite__title:hover time,
+.profile_comment_favorite__user:hover,
+.profile_comment_favorite__user:hover time,
+.profile_comment_self__title:hover,
+.profile_comment_self__title:hover time,
+.t-link-hovered,
+.t-link:hover,
+.t-link:hover time,
+.vote .vote__users__item:hover,
+.vote .vote__users__item:hover time,
+a.content-header-author:hover,
+a.content-header-author:hover time,
+a.content-header-number:hover,
+a.content-header-number:hover time,
+.comments_counter__count__value_new,
+.comments_counter:hover .comments_counter__count__unit,
+.comments_counter:hover .comments_counter__count__value,
+.comments_counter:hover .comments_counter__count__value_new.comments_counter__count__value_new {
+  color: var(--text-color-blue);
+}

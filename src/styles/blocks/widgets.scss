@@ -1,0 +1,24 @@
+.news_widget {
+  &__header {
+    color: var(--text-color-title);
+  }
+
+  &__toggle {
+    color: var(--text-color-minor);
+
+    .icon {
+      color: var(--text-color-minor);
+    }
+  }
+
+  .news_item .time {
+    color: var(--text-color-minor);
+  }
+
+  .comments_counter {
+    color: var(--text-color-minor);
+    &:hover {
+      color: var(--text-color-blue);
+    }
+  }
+}
