@@ -1,5 +1,7 @@
 import {enableOption, disableOption} from './manage-options';
 
+
+//Кнопка в хедере
 const createOptionsButton = () => {
   const optionsButtonWrapper = document.createElement('div');
   optionsButtonWrapper.className = 'site-header__item uww-options';
@@ -19,7 +21,7 @@ const createOptionsButton = () => {
 
 //Создаем блок конкретной опции.
 //Очоба оборачивает инпуты чекбоксов,
-//поэтому вместо них городим вот это.
+//поэтому вместо тогглов на них городим вот это.
 const createOptionsItem = (option, options) => {
   const optionItem = document.createElement('label');
   optionItem.className = 'uww-options__item';
@@ -45,26 +47,27 @@ const createOptionsItem = (option, options) => {
       ev.currentTarget.isEnabled = true;
     }
     
-    ev.currentTarget.getElementsByClassName('uww-options__toggle')[0].classList.toggle('uww-options__toggle--checked');
+    ev.currentTarget.getElementsByClassName('uww-options__toggle')[0]
+      .classList.toggle('uww-options__toggle--checked');
   });
   
   return optionItem;
 }
 
+//Дропдаун для опций
 const createOptionsDropdown = (options, optionsWrapper) => {
   const optionsDropdown = document.createElement('div');
   optionsDropdown.className = 'uww-options__dropdown';
+  
   for (const option in options) {
     const optionsItem = createOptionsItem(option, options);
     optionsDropdown.appendChild(optionsItem);
   }
-  optionsDropdown.addEventListener('click', ev => {
-    ev.stopPropagation();
-  })
   
   optionsWrapper.appendChild(optionsDropdown);
 }
 
+//Листенеры для открытия/закрытия дропдауна
 const addDropdownEventListeners = () => {
   const optionsButton = document.getElementsByClassName('uww-options__header-button')[0];
   const optionsDropdown = document.getElementsByClassName('uww-options__dropdown')[0];
