@@ -6,6 +6,6 @@ export const replaceClassesInCss = (css, classMap) => {
       css = css.replace(regex, classMap[key]);
     }
   }
-  console.log(css);
+  
   return css;
 }
