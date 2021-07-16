@@ -1,0 +1,22 @@
+@import '../mixins';
+
+.popover {
+  background-color: var(--color-08ev);
+  @include popoverShadow;
+
+  &-item {
+    color: var(--text-color-gray);
+
+    &:hover, &--focused {
+      background-color: var(--hover-08ev);
+    }
+
+    &__label[style="color: rgb(46, 168, 58);"] {
+      color: var(--text-color-green) !important;
+    }
+
+    &__label[style="color: color: rgb(229, 46, 58);"] {
+      color: var(--text-color-red) !important;
+    }
+  }
+}
