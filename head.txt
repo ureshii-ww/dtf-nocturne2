@@ -1,0 +1,18 @@
+// ==UserScript==
+// @name        DTF Nocturne Test
+// @version     0.1.0
+// @author      ureshii-ww
+// @description The best dark theme for Osnova websites
+// @homepage    https://dtf.ru/u/197370-le-mort-joyeux
+// @supportURL  https://dtf.ru/u/197370-le-mort-joyeux
+// @match       https://tjournal.ru/*
+// @match       https://dtf.ru/*
+// @match       https://vc.ru/*
+// @icon        https://www.google.com/s2/favicons?domain=dtf.ru
+// @updateURL   https://github.com/ureshii-ww/dtf-nocturne2/raw/development/dist/dtf-nocturne.user.js
+// @downloadURL https://github.com/ureshii-ww/dtf-nocturne2/raw/development/dist/dtf-nocturne.user.js
+// @run-at      document-start
+// @grant       none
+// @license     https://www.gnu.org/licenses/gpl-3.0.en.html
+// @website     https://dtf.ru/u/197370-le-mort-joyeux
+// ==/UserScript==
