@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        DTF Nocturne Test
-// @version     0.1.0
+// @version     0.1.1
 // @author      ureshii-ww
 // @description The best dark theme for Osnova websites
 // @homepage    https://dtf.ru/u/197370-le-mort-joyeux

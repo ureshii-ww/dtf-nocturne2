@@ -1,3 +1,5 @@
+@import '../mixins';
+
 .site-header {
   background-color: var(--color-08ev);
   color: var(--text-color-gray);
@@ -12,6 +14,16 @@
   &:hover {
     color: var(--text-color-blue);
   }
+}
+
+.search__field .v-field--focused .v-field__wrapper {
+  @include newFormBorderFocused;
+  @include newFormBorderShadow;
+}
+
+.search__field .v-field:not(.v-field--focused) .v-field__wrapper:hover {
+  @include newFormBorderHover;
+  @include newFormBorderShadow;
 }
 
 .search__input {
